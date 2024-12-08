@@ -25,8 +25,5 @@ This project is an **IoT-Enabled DC Motor Control System** that provides precise
 2. Connect the DC motor and tachometer to the designated PCB terminals.
 
 ### Software Setup
-1. Install the **GNU-ARM-Toolchain** on your system.
-2. Clone this repository:
-   ```bash
-   git clone https://github.com/maanavkoladia/IoTRobotCar.git
-
+1. Ensure the **GNU-ARM-Toolchain** and **CMake** are installed on your system.
+2. Use the "flash" script in the sw/src folder to build the executable and flash to the MCU
