@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "tm4c123gh6pm.h": "c",
+        "compare": "c",
+        "cstdint": "c",
+        "pll.h": "c",
+        "uart.h": "c",
+        "uart5.h": "c",
+        "esp8266.h": "c"
+    }
+}

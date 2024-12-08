@@ -1,0 +1,99 @@
+<!-- -------------------------------------------- -->
+<!-- --------- LAB 9 Web Application ----------- -->
+<!-- 
+    Mashed up by: Mark McDermott from various sources
+    Project:      EE445L Lab 9
+    Updated:      7/11/24
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>MQTT Control</title>
+		<link rel = "stylesheet" href = "lib/styles.css">        
+	</head>
+<body>
+        
+<!-- Import Source Paho MQTT Client, our code is called at the bottom -->
+<script src="lib/mqttws31.js"></script>
+
+        
+<!-- Table for displaying current State -->
+<table border="0" width="470" height="220">
+	<tr>
+		<td style="text-align: center;">	
+			<h1>LEFT MOTOR</h1>
+			<div id = "left_U" ></div><br>
+			<div id = "left_ERR" ></div><br>
+			<div id = "left_RPM" ></div><br>
+		</td>
+        	<td style="text-align: center;">
+			<h1>RIGHT MOTOR</h1>
+			<div id = "right_U" ></div><br>
+			<div id = "right_ERR" ></div><br>
+			<div id = "right_RPM" ></div><br>
+		</td>
+	</tr>
+</table>
+       
+
+<!-- Table for setting new values and EC -->
+<table border="0" width="450" height="50">
+	<tr>
+		<td>
+			<!-- SET Kp Term (TODO 1/2) -->
+            		<p>
+                		<form name="kp1_msg" action="" onsubmit="set_kp1()">
+                    		<font size="4" face="Arial">Set Kp1:<b>&nbsp; </b></font>
+				<font size="4" face="Arial Black">&nbsp;<input type="number"  name="kp1_value" ><br></font>                 
+                		</form>
+            		</p>
+					<p>
+                		<form name="kp2_msg" action="" onsubmit="set_kp2()">
+                    		<font size="4" face="Arial">Set Kp2:<b>&nbsp; </b></font>
+				<font size="4" face="Arial Black">&nbsp;<input type="number"  name="kp2_value" ><br></font>                 
+                		</form>
+            		</p>
+ 			<!-- SET Ki Terms -->
+			 <p>
+				<form name="ki1_msg" action="" onsubmit="set_ki1()">
+					<font size="4" face="Arial">Set Ki1:<b>&nbsp; </b></font>
+		<font size="4" face="Arial Black">&nbsp;<input type="number"  name="ki1_value" ><br></font>                 
+				</form>
+			</p>
+			<p>
+				<form name="ki2_msg" action="" onsubmit="set_ki2()">
+					<font size="4" face="Arial">Set Ki2:<b>&nbsp; </b></font>
+		<font size="4" face="Arial Black">&nbsp;<input type="number"  name="ki2_value" ><br></font>                 
+				</form>
+			</p>
+			 
+			<p>
+				<form name="xstar_msg" action="" onsubmit="set_speed()">
+					<font size="4" face="Arial">Set Speed:<b>&nbsp; </b></font>
+		<font size="4" face="Arial Black">&nbsp;<input type="number"  name="xstar_value" ><br></font>                 
+				</form>
+			</p>
+		<td>
+          		<!-- Extra column for EC readout, HINT not like previous column-->
+				  <div id = "get_kp1" ></div><br>
+				  <div id = "get_kp2" ></div><br>
+				  <div id = "get_ki1" ></div><br> 
+				  <div id = "get_ki2" ></div><br> 
+				  <div id = "get_xstar" ></div><br> 
+
+		</td>
+	</tr>
+</table>
+	
+<br> <br> 		
+
+<!-- Import code, and Start it up! (After page has loaded) -->
+<script src="motor_ctl.js"></script>
+<script>connect();</script>
+
+        
+</body>
+</html>
