@@ -50,9 +50,9 @@
 // ----------------  VARIABLES    --------------------------------- 
 // ----------------------------------------------------------------        
 //
-char    eid[20]               = "erh2656";
-char    ssid[64]              = "utexas-iot";                      
-char    password[64]          = "33940254006967049323";   
+char    eid[20]               = "xxxxxxx";
+char    ssid[64]              = "SSID";                      
+char    password[64]          = "dont worry about it";   
 
 
 char    U_left[10]           = "0";
